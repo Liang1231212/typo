@@ -18,7 +18,7 @@ describe Admin::CategoriesController do
 
   describe "test_create" do
     before(:each) do
-      get :new #, :id => Factory(:category).id
+      get :new 
     end
 
     it 'should render template new' do
@@ -29,8 +29,13 @@ describe Admin::CategoriesController do
 
     it 'should create a new category' do
       post :edit, :category => {:name => "Category A", :keywords => "Keyword ABC", :permalink => "no permailink", :description => "no description"}
-      assert_response :redirect, :action => 'index'
       expect(flash[:notice]).to eq("Category was successfully saved.")
+    end
+
+    it 'should render template new' do
+      assert_template 'new'
+      assert_tag :tag => "table",
+        :attributes => { :id => "category_container" }
     end
   end 
 

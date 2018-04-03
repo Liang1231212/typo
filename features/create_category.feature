@@ -19,4 +19,5 @@ Feature: Create Categories
     Then I should see "Keyword ABC"
     Then I should see "no permalink"
     Then I should see "no description"
+    Then I should see "Category was successfully saved."
 

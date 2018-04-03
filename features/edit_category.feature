@@ -13,8 +13,8 @@ Feature: Edit Categories
     And I fill in "category_keywords" with "Keyword ABC"
     And I fill in "category_permalink" with "no permalink"
     And I fill in "category_description" with "no description"
-
     And I press "Save"
+    
     Then I follow "Category A"
     And I fill in "category_name" with "Category B"
     And I fill in "category_keywords" with "Keyword DEF"
